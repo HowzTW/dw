@@ -1,5 +1,7 @@
 <script setup>
 import dwWelcome from './components/dwWelcome.vue'
+import dwTest from './components/dwTest.vue'
+import dwColorDemo from './components/dwColorDemo.vue'
 import { ref } from "@vue/reactivity"
 
 const section = ref("welcome")
@@ -19,7 +21,7 @@ const setSubMenuInvisible = () => {
 
 <template>
     <div id="menu" class="menu" v-if="section !== 'welcome'">
-        <img class="menuLogo" src="/images/icon-512.png" />
+        <img class="menuLogo" @click="setSection('welcome')" src="/images/icon-512.png" />
         <h1 class="menuTitle">追劇小幫手</h1>
         <div class="menuButton" @click="changeSubMenuVisible()">
             <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" viewBox="0 0 24 24">
@@ -30,13 +32,13 @@ const setSubMenuInvisible = () => {
     </div>
 
     <div id="subMenu" class="subMenu" v-if="subMenuVisable === true">
-        <h3 @click="setSection('test')">新增影集</h3>
+        <h3 class="subMenuItem" @click="setSection('test')">新增影集</h3>
         <hr />
-        <h3 @click="setSection('demo')">檢視原始資料</h3>
+        <h3 class="subMenuItem" @click="setSection('demo')">檢視原始資料</h3>
         <hr />
-        <h3 @click="setSection('test')">清除全部影集</h3>
+        <h3 class="subMenuItem" @click="setSection('test')">清除全部影集</h3>
         <hr />
-        <h3 @click="setSection('welcome')">檢視觀看紀錄</h3>
+        <h3 class="subMenuItem" @click="setSection('welcome')">檢視觀看紀錄</h3>
         <hr />
 
     </div>
@@ -51,19 +53,17 @@ const setSubMenuInvisible = () => {
     </div>
 
     <div id="test" class="divContent" v-if="section === 'test'">
-        <h1>TEST</h1>
-        <a href="http://www.google.com.tw">Google</a>
+        <dwTest />
     </div>
     <div id="demo" class="divContent" v-if="section === 'demo'">
-        <h1>DEMO</h1>
-        <a href="http://www.cht.com.tw">CHT</a>
-
+        <dwColorDemo />
     </div>
 
 
 </template>
 
-<style scoped>
+<style>
+@import './assets/base.css';
 
 .divWelcome {
     text-align: center;
@@ -85,7 +85,7 @@ const setSubMenuInvisible = () => {
 }
 
 .menu {
-    background-color: brown;
+    background-color: var(--howztw-dw-c-primary);
     margin: 0px;
     padding: 5px 5px 5px 5px;
     position: fixed;
@@ -96,7 +96,7 @@ const setSubMenuInvisible = () => {
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
     display: flex;
     align-items: center;
-    color: blanchedalmond;
+    color: var(--howztw-dw-c-primary-on);
     z-index: 999;
     height: 70px;
     animation: menuIn 0.3s ease-in-out;
@@ -123,9 +123,7 @@ const setSubMenuInvisible = () => {
 .subMenu {
     background-color: white;
     position: fixed;
-    min-width: 100px;
-    max-width: 200px;
-    top: 70px;
+    top: 65px;
     right: -5px;
     padding: 10px;
     z-index: 998;
@@ -134,8 +132,25 @@ const setSubMenuInvisible = () => {
     animation: subMenuIn 0.5s ease-in-out;
 }
 
+.subMenuItem {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight:900;
+}
 
+.div100w {
+    width:100%;
+}
 
+.div50w {
+    width:50%;
+}
+
+.divFlex {
+    display: flex;
+    place-items: flex-start;
+    flex-wrap: wrap;
+}
 
 @keyframes menuIn {
     0% {
