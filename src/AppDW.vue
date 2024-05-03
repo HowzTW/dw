@@ -20,8 +20,8 @@ const setSubMenuInvisible = () => {
 </script>
 
 <template>
-    <div id="menu" class="menu" v-if="section !== 'welcome'">
-        <img class="menuLogo" @click="setSection('welcome')" src="/images/icon-512.png" />
+    <div id="menu" class="divMenu" v-if="section !== 'welcome'">
+        <img class="menuLogo" @click="setSection('main')" src="/images/icon-512.png" />
         <h1 class="menuTitle">追劇小幫手</h1>
         <div class="menuButton" @click="changeSubMenuVisible()">
             <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" viewBox="0 0 24 24">
@@ -31,7 +31,7 @@ const setSubMenuInvisible = () => {
         </div>
     </div>
 
-    <div id="subMenu" class="subMenu" v-if="subMenuVisable === true">
+    <div id="subMenu" class="divSubMenu" v-if="subMenuVisable === true">
         <h3 class="subMenuItem" @click="setSection('test')">新增影集</h3>
         <hr />
         <h3 class="subMenuItem" @click="setSection('demo')">檢視原始資料</h3>
@@ -45,16 +45,21 @@ const setSubMenuInvisible = () => {
 
     <div id="welcome" class="divWelcome" v-if="section === 'welcome'">
         <dwWelcome />
-        <div class="start" @click="setSection('test')">
+        <div class="start" @click="setSection('main')">
             <svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" viewBox="0 0 8 8">
                 <path fill="currentColor" d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4s4-1.79 4-4s-1.79-4-4-4M3 2l3 2l-3 2z" />
             </svg>
         </div>
     </div>
 
+    <div id="main" class="divContent divMain" v-if="section === 'main'">
+        <h1>首頁</h1>
+    </div>
+
     <div id="test" class="divContent" v-if="section === 'test'">
         <dwTest />
     </div>
+
     <div id="demo" class="divContent" v-if="section === 'demo'">
         <dwColorDemo />
     </div>
@@ -84,7 +89,7 @@ const setSubMenuInvisible = () => {
     animation: divContentIn 0.5s ease-in-out;
 }
 
-.menu {
+.divMenu {
     background-color: var(--howztw-dw-c-primary);
     margin: 0px;
     padding: 5px 5px 5px 5px;
@@ -120,7 +125,7 @@ const setSubMenuInvisible = () => {
     filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.9));
 }
 
-.subMenu {
+.divSubMenu {
     background-color: white;
     position: fixed;
     top: 65px;
