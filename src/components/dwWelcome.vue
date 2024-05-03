@@ -22,7 +22,7 @@
 
 .logo {
     margin-top: 80px;
-    max-width: 60%;
+    max-width: 256px;
     border-radius: 20px;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7))
 }
