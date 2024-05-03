@@ -1,0 +1,491 @@
+{
+    "dramaTitle": "到了30歲還是處男，似乎會變成魔法師",
+    "dramaUrl": "https://gimy.ai/vod/141199.html",
+    "dramaCoverUrl": "https://img.1777cdn.com/upload/vod/20210501-1/fa4c71d924da6cca7603ae46602578e7.jpg",
+    "filmSources": [
+        {
+            "episodes": [
+                {
+                    "episodeName": "01",
+                    "episodeUrl": "kemi-pMFig7Vtv1cNHWQMgCiCLOrIkqk_bm482ifATEtI95svbix5_arlbRq78xcGVilLwqzlF24zQI8gANl1hIvALaZixVneZvc4h8ERIz",
+                    "episodeId": "141199-01-001"
+                },
+                {
+                    "episodeId": "141199-01-002",
+                    "episodeUrl": "kemi-_a8I01rZtv1UNHWRW3XvRfbmelfU_azNg8h_aAcRItpvMzVgx5_a_bQSBq7gxdjE7weorzVYi5m0P8FRewAlP6gqKMn5Rm7w6IocoQ04x",
+                    "episodeName": "02"
+                },
+                {
+                    "episodeId": "141199-01-003",
+                    "episodeName": "03",
+                    "episodeUrl": "kemi-o5Yx1_b1iugYNHWRaiXvVKLyYwv88k91givAQENxo7MmHhht8_b1fc_a743cWpiwb95lVQkszwH9VBewwgd6QnYMXZezL1vddooEk8x"
+                },
+                {
+                    "episodeId": "141199-01-004",
+                    "episodeName": "04",
+                    "episodeUrl": "kemi-pMQz0OE36AQNHWQJiS7RKOrIwvlry9xkiatAR99r7ZvTgRkq_aVaCqbM3eWE4k_bl4z1MisTpeogBYwgtPv16OYnoFmrE4JN16ER4x"
+                },
+                {
+                    "episodeUrl": "kemi-9MFljLVsuQ4NHWQOgH6NermZn_a88zthhhvERFd1v58eH10x9q1PUq7pndTdixbl9zQN2uG9e_bQVQl19N5AvfZnxel7czIoZ7FBNi",
+                    "episodeName": "05",
+                    "episodeId": "141199-01-005"
+                },
+                {
+                    "episodeId": "141199-01-006",
+                    "episodeName": "06",
+                    "episodeUrl": "kemi-8pE217FivgQNHWQJgSjRIbrLlf45yIpjifEUGtNr68va1hgq_agOFqLMwdDY7x752z1Rx4mpe8g1ZnglL6ViKNyxWybRvJo99RR8x"
+                },
+                {
+                    "episodeUrl": "kemi-p5BthrIz7AcNHWRZ3CnWKbfMlKprnIpm2PUXF9lq6Z3S1kp4qgHS_bu1gdWc8w7F6zgx2sz4L8gZdxwFNuF3aYn4FlrZqdIh9QExn",
+                    "episodeName": "07",
+                    "episodeId": "141199-01-007"
+                },
+                {
+                    "episodeId": "141199-01-008",
+                    "episodeUrl": "kemi-p8ZijeJmug4NHWQOjXnRf_b2flv84z909i6AcG4xnus_aa0R99rgfd_aupiJTJuwe4tygQkuT5epABax11KvA2BMXpUm_bU5dYp_bGB82",
+                    "episodeName": "08"
+                },
+                {
+                    "episodeName": "09",
+                    "episodeUrl": "kemi-95VlhOZjuAUNHWRc2HjRL_buZxqpunIlkiaEWENI9uMfX0Ukh_alTXrL1jcjBrzLEqyFQntmkI8AALwlwau12NZX4EyrdqfootEBgy",
+                    "episodeId": "141199-01-009"
+                },
+                {
+                    "episodeName": "10",
+                    "episodeId": "141199-01-010",
+                    "episodeUrl": "kemi-_apYx0eJguVMNHWRc2CjRLu2Yxv8_byYk0ifUTQ9hrvc_bH1hh_arQLWqe9iImA5w_bx9lAV1szQM_bQJQw1xM5AKJZXtfzbE8dI8rE0tn"
+                },
+                {
+                    "episodeName": "11",
+                    "episodeUrl": "kemi-p8IwhOFk7AANHWQJiXuNfL2flP9sk94w26oXRo9su8zQhhx4_bwLV_abticTBtwekrmwVzsG1Z8QRakABAvA2KanxRmLFpc4p5Rx81",
+                    "episodeId": "141199-01-011"
+                },
+                {
+                    "episodeId": "141199-01-012",
+                    "episodeUrl": "kemi-_a5dtheRjuAMNHWRc2iLQLeyVxqo3zNRjiKEUFY5vu5jShxp98VOC_bbo2dWZqwrApzQMk5WhaowAOlQxI7AjfYShWm7E6cYcgFhtl",
+                    "episodeName": "12"
+                },
+                {
+                    "episodeId": "141199-01-013",
+                    "episodeName": "SP01",
+                    "episodeUrl": "kemi-p5VtjOFm7gUNHWRZgH7VKLyUlKk_bmN4w3aIQFNNm6smDhxggrQTT_b7k4Imc8w_b16mFQgsG8H8AZfxwxM5A7YNX4BluVvdd0vEElh"
+                },
+                {
+                    "episodeUrl": "kemi-_asRsgOc271UNHWRagH7SfOvIkKhrndo32qQQE4tt6JzUhBkqqVaF8_b9nJWpvl_bt_byAIg5mldoAQLkl1LuQPcYHsGmbI6cd56GBpk",
+                    "episodeId": "141199-01-014",
+                    "episodeName": "SP02"
+                }
+            ],
+            "filmSourceName": "高清線路 ᴴᴰ",
+            "filmSourceId": "141199-01"
+        },
+        {
+            "episodes": [
+                {
+                    "episodeName": "第01集",
+                    "episodeId": "141199-02-001",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/3HREZbKm/index.m3u8"
+                },
+                {
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/RjPX9lpr/index.m3u8",
+                    "episodeId": "141199-02-002",
+                    "episodeName": "第02集"
+                },
+                {
+                    "episodeName": "第03集",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/NXrqc2mc/index.m3u8",
+                    "episodeId": "141199-02-003"
+                },
+                {
+                    "episodeName": "第04集",
+                    "episodeId": "141199-02-004",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/BRqrNPao/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-02-005",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/qjMi44F1/index.m3u8",
+                    "episodeName": "第05集"
+                },
+                {
+                    "episodeId": "141199-02-006",
+                    "episodeName": "第06集",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/fZjiCC7u/index.m3u8"
+                },
+                {
+                    "episodeName": "第07集",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/vcI0AJV0/index.m3u8",
+                    "episodeId": "141199-02-007"
+                },
+                {
+                    "episodeName": "第08集",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/GBoBNhOg/index.m3u8",
+                    "episodeId": "141199-02-008"
+                },
+                {
+                    "episodeId": "141199-02-009",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/P5aI7iXN/index.m3u8",
+                    "episodeName": "第09集"
+                },
+                {
+                    "episodeId": "141199-02-010",
+                    "episodeName": "第10集",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/c8yLa5ec/index.m3u8"
+                },
+                {
+                    "episodeName": "第11集",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/M6sumM3S/index.m3u8",
+                    "episodeId": "141199-02-011"
+                },
+                {
+                    "episodeId": "141199-02-012",
+                    "episodeUrl": "https://v1.1080pzy.co/20220816/D4f6bw42/index.m3u8",
+                    "episodeName": "第12集"
+                }
+            ],
+            "filmSourceName": "噴射雲",
+            "filmSourceId": "141199-02"
+        },
+        {
+            "filmSourceName": "天空雲",
+            "filmSourceId": "141199-03",
+            "episodes": [
+                {
+                    "episodeUrl": "https://v8.dious.cc/20221017/sjLkz4rk/index.m3u8",
+                    "episodeId": "141199-03-001",
+                    "episodeName": "第01集"
+                },
+                {
+                    "episodeId": "141199-03-002",
+                    "episodeName": "第02集",
+                    "episodeUrl": "https://v8.dious.cc/20221017/zpk3HlLa/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-03-003",
+                    "episodeName": "第03集",
+                    "episodeUrl": "https://v8.dious.cc/20221017/nL9edz3O/index.m3u8"
+                },
+                {
+                    "episodeUrl": "https://v8.dious.cc/20221017/wp3EkRix/index.m3u8",
+                    "episodeId": "141199-03-004",
+                    "episodeName": "第04集"
+                },
+                {
+                    "episodeId": "141199-03-005",
+                    "episodeUrl": "https://v8.dious.cc/20221017/Pds4VvxA/index.m3u8",
+                    "episodeName": "第05集"
+                },
+                {
+                    "episodeId": "141199-03-006",
+                    "episodeName": "第06集",
+                    "episodeUrl": "https://v8.dious.cc/20221017/3PeUW5n8/index.m3u8"
+                },
+                {
+                    "episodeName": "第07集",
+                    "episodeUrl": "https://v8.dious.cc/20221017/rt63qeIO/index.m3u8",
+                    "episodeId": "141199-03-007"
+                },
+                {
+                    "episodeId": "141199-03-008",
+                    "episodeName": "第08集",
+                    "episodeUrl": "https://v8.dious.cc/20221017/12LmIT3o/index.m3u8"
+                },
+                {
+                    "episodeName": "第09集",
+                    "episodeId": "141199-03-009",
+                    "episodeUrl": "https://v8.dious.cc/20221017/1L2FPSZa/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-03-010",
+                    "episodeName": "第10集",
+                    "episodeUrl": "https://v8.dious.cc/20221017/T24tTs8n/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-03-011",
+                    "episodeName": "第11集",
+                    "episodeUrl": "https://v8.dious.cc/20221017/DIfJinJS/index.m3u8"
+                },
+                {
+                    "episodeName": "第12集",
+                    "episodeId": "141199-03-012",
+                    "episodeUrl": "https://v8.dious.cc/20221017/5wzuNSjF/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-03-013",
+                    "episodeName": "SP01",
+                    "episodeUrl": "https://v8.dious.cc/20221017/5tIYcuvo/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-03-014",
+                    "episodeUrl": "https://v8.dious.cc/20221017/xXOg05SI/index.m3u8",
+                    "episodeName": "SP02"
+                }
+            ]
+        },
+        {
+            "filmSourceId": "141199-04",
+            "episodes": [
+                {
+                    "episodeUrl": "https://64.32.20.242/play/9avMRm5e/index.m3u8",
+                    "episodeId": "141199-04-001",
+                    "episodeName": "第01集"
+                },
+                {
+                    "episodeName": "第02集",
+                    "episodeId": "141199-04-002",
+                    "episodeUrl": "https://64.32.20.242/play/xboBPX3a/index.m3u8"
+                },
+                {
+                    "episodeUrl": "https://64.32.20.242/play/NbWEGXEe/index.m3u8",
+                    "episodeId": "141199-04-003",
+                    "episodeName": "第03集"
+                },
+                {
+                    "episodeUrl": "https://64.32.20.242/play/PdRy2Pzb/index.m3u8",
+                    "episodeId": "141199-04-004",
+                    "episodeName": "第04集"
+                },
+                {
+                    "episodeId": "141199-04-005",
+                    "episodeName": "第05集",
+                    "episodeUrl": "https://64.32.20.242/play/QdJMYBPb/index.m3u8"
+                },
+                {
+                    "episodeUrl": "https://64.32.20.242/play/7axA5mzb/index.m3u8",
+                    "episodeId": "141199-04-006",
+                    "episodeName": "第06集"
+                },
+                {
+                    "episodeId": "141199-04-007",
+                    "episodeName": "第07集",
+                    "episodeUrl": "https://64.32.20.242/play/QbYwJBOe/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-04-008",
+                    "episodeUrl": "https://64.32.20.242/play/xbooqMLb/index.m3u8",
+                    "episodeName": "第08集"
+                },
+                {
+                    "episodeName": "第09集",
+                    "episodeUrl": "https://64.32.20.242/play/6dBAKXWb/index.m3u8",
+                    "episodeId": "141199-04-009"
+                },
+                {
+                    "episodeUrl": "https://64.32.20.242/play/PdRq8ARb/index.m3u8",
+                    "episodeId": "141199-04-010",
+                    "episodeName": "第10集"
+                },
+                {
+                    "episodeName": "第11集",
+                    "episodeUrl": "https://64.32.20.242/play/NbWylNEe/index.m3u8",
+                    "episodeId": "141199-04-011"
+                },
+                {
+                    "episodeUrl": "https://64.32.20.242/play/xborzOAa/index.m3u8",
+                    "episodeId": "141199-04-012",
+                    "episodeName": "第12集"
+                }
+            ],
+            "filmSourceName": "極速雲"
+        },
+        {
+            "filmSourceId": "141199-05",
+            "filmSourceName": "光速雲",
+            "episodes": [
+                {
+                    "episodeId": "141199-05-001",
+                    "episodeName": "第01集",
+                    "episodeUrl": "https://v.gsuus.com/play/xboB8AXa/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-05-002",
+                    "episodeName": "第02集",
+                    "episodeUrl": "https://v.gsuus.com/play/mbkxPXEd/index.m3u8"
+                },
+                {
+                    "episodeName": "第03集",
+                    "episodeUrl": "https://v.gsuus.com/play/ZdPwxAAb/index.m3u8",
+                    "episodeId": "141199-05-003"
+                },
+                {
+                    "episodeId": "141199-05-004",
+                    "episodeName": "第04集",
+                    "episodeUrl": "https://v.gsuus.com/play/0dNrQYmd/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-05-005",
+                    "episodeName": "第05集",
+                    "episodeUrl": "https://v.gsuus.com/play/6dBA8qNb/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-05-006",
+                    "episodeName": "第06集",
+                    "episodeUrl": "https://v.gsuus.com/play/zbqq59Db/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-05-007",
+                    "episodeUrl": "https://v.gsuus.com/play/PdRmyrzb/index.m3u8",
+                    "episodeName": "第07集"
+                },
+                {
+                    "episodeId": "141199-05-008",
+                    "episodeUrl": "https://v.gsuus.com/play/mbkkmGvb/index.m3u8",
+                    "episodeName": "第08集"
+                },
+                {
+                    "episodeName": "第09集",
+                    "episodeUrl": "https://v.gsuus.com/play/7axAZzEb/index.m3u8",
+                    "episodeId": "141199-05-009"
+                },
+                {
+                    "episodeName": "第10集",
+                    "episodeId": "141199-05-010",
+                    "episodeUrl": "https://v.gsuus.com/play/0dNm7wzb/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-05-011",
+                    "episodeName": "第11集",
+                    "episodeUrl": "https://v.gsuus.com/play/ZdPo9DAb/index.m3u8"
+                },
+                {
+                    "episodeName": "第12集",
+                    "episodeUrl": "https://v.gsuus.com/play/mbknvora/index.m3u8",
+                    "episodeId": "141199-05-012"
+                }
+            ]
+        },
+        {
+            "filmSourceId": "141199-06",
+            "filmSourceName": "豪華雲",
+            "episodes": [
+                {
+                    "episodeName": "第01集",
+                    "episodeUrl": "https://play.hhuus.com/play/YerGBgpa/index.m3u8",
+                    "episodeId": "141199-06-001"
+                },
+                {
+                    "episodeUrl": "https://play.hhuus.com/play/penAP6Ed/index.m3u8",
+                    "episodeId": "141199-06-002",
+                    "episodeName": "第02集"
+                },
+                {
+                    "episodeName": "第03集",
+                    "episodeId": "141199-06-003",
+                    "episodeUrl": "https://play.hhuus.com/play/5eVDEKzb/index.m3u8"
+                },
+                {
+                    "episodeName": "第04集",
+                    "episodeUrl": "https://play.hhuus.com/play/qaQxZ6Me/index.m3u8",
+                    "episodeId": "141199-06-004"
+                },
+                {
+                    "episodeUrl": "https://play.hhuus.com/play/RdGJY08b/index.m3u8",
+                    "episodeName": "第05集",
+                    "episodeId": "141199-06-005"
+                },
+                {
+                    "episodeUrl": "https://play.hhuus.com/play/Ddwz5lgb/index.m3u8",
+                    "episodeName": "第06集",
+                    "episodeId": "141199-06-006"
+                },
+                {
+                    "episodeId": "141199-06-007",
+                    "episodeName": "第07集",
+                    "episodeUrl": "https://play.hhuus.com/play/BeXvGA8b/index.m3u8"
+                },
+                {
+                    "episodeUrl": "https://play.hhuus.com/play/pen0pLpb/index.m3u8",
+                    "episodeName": "第08集",
+                    "episodeId": "141199-06-008"
+                },
+                {
+                    "episodeId": "141199-06-009",
+                    "episodeName": "第09集",
+                    "episodeUrl": "https://play.hhuus.com/play/9aAzJXpb/index.m3u8"
+                },
+                {
+                    "episodeUrl": "https://play.hhuus.com/play/qaQpAzYe/index.m3u8",
+                    "episodeName": "第10集",
+                    "episodeId": "141199-06-010"
+                },
+                {
+                    "episodeName": "第11集",
+                    "episodeUrl": "https://play.hhuus.com/play/5eVxkMzb/index.m3u8",
+                    "episodeId": "141199-06-011"
+                },
+                {
+                    "episodeUrl": "https://play.hhuus.com/play/penqyzYd/index.m3u8",
+                    "episodeId": "141199-06-012",
+                    "episodeName": "第12集"
+                }
+            ]
+        },
+        {
+            "filmSourceName": "動漫雲",
+            "episodes": [
+                {
+                    "episodeName": "第1集",
+                    "episodeUrl": "https://play.modujx10.com/20240111/xj5H1Ttt/index.m3u8",
+                    "episodeId": "141199-07-001"
+                },
+                {
+                    "episodeName": "第2集",
+                    "episodeUrl": "https://play.modujx10.com/20240118/jVXzG7nV/index.m3u8",
+                    "episodeId": "141199-07-002"
+                },
+                {
+                    "episodeName": "第3集",
+                    "episodeUrl": "https://play.modujx10.com/20240125/xhExSeMx/index.m3u8",
+                    "episodeId": "141199-07-003"
+                },
+                {
+                    "episodeId": "141199-07-004",
+                    "episodeUrl": "https://play.modujx10.com/20240201/gpUX3Wj3/index.m3u8",
+                    "episodeName": "第4集"
+                },
+                {
+                    "episodeId": "141199-07-005",
+                    "episodeName": "第5集",
+                    "episodeUrl": "https://play.modujx10.com/20240208/sfquTyt4/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-07-006",
+                    "episodeName": "第6集",
+                    "episodeUrl": "https://play.modujx10.com/20240215/aUy1soxH/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-07-007",
+                    "episodeUrl": "https://play.modujx10.com/20240222/yf02Jw5g/index.m3u8",
+                    "episodeName": "第7集"
+                },
+                {
+                    "episodeId": "141199-07-008",
+                    "episodeName": "第8集",
+                    "episodeUrl": "https://play.modujx10.com/20240229/QdWwIsVQ/index.m3u8"
+                },
+                {
+                    "episodeUrl": "https://play.modujx10.com/20240307/d8orpR5G/index.m3u8",
+                    "episodeName": "第9集",
+                    "episodeId": "141199-07-009"
+                },
+                {
+                    "episodeId": "141199-07-010",
+                    "episodeName": "第10集",
+                    "episodeUrl": "https://play.modujx10.com/20240314/KKfwmcZW/index.m3u8"
+                },
+                {
+                    "episodeId": "141199-07-011",
+                    "episodeName": "第11集",
+                    "episodeUrl": "https://play.modujx10.com/20240321/opf2aRMV/index.m3u8"
+                },
+                {
+                    "episodeUrl": "https://play.modujx10.com/20240328/WSYEGGUn/index.m3u8",
+                    "episodeName": "第12集",
+                    "episodeId": "141199-07-012"
+                }
+            ],
+            "filmSourceId": "141199-07"
+        }
+    ],
+    "dramaId": "141199",
+    "dramaSite": "gimy.ai"
+}
