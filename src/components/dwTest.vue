@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from "@vue/reactivity"
 
+import jsonObj from "../assets/data/drama/gimy.ai.258606.json"
+
+/*
 const filename = ref("/data/drama/gimy.ai.258606.json")
 var jsonObj = ref('(blank)')
 
@@ -17,6 +20,7 @@ const getJsonData = () => {
         }
     ); //then
 } 
+*/
 
 </script>
 
@@ -25,8 +29,8 @@ const getJsonData = () => {
         <h1>JSON讀寫測試</h1>
         <p>
             請輸入檔案名稱：<br />
-            <input type="text" v-model="filename" placeholder="請輸入檔案名稱" /><br />
-            <button @click="getJsonData">讀取</button><br />
+            <input type="text" placeholder="請輸入檔案名稱" /><br />
+            <button >讀取</button><br />
             <textarea> {{ jsonObj }}</textarea><br />
         </p>
         <p v-for="filmSource in jsonObj.filmSources">
