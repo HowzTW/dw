@@ -14,6 +14,7 @@ import { ref, watch, watchEffect } from "vue"
 var dramaJsonFilename = ref("");
 
 const jsonObj = ref("original value"); 
+const resultMsg = ref("")
 
 const jsonImport = () => {
     //dramaJsonFilename.value = `../../assets/data/drama/${props.site}.${props.id}.json`;
@@ -21,9 +22,11 @@ const jsonImport = () => {
     import(dramaJsonFilename.value)
     .then( (module) => {
         jsonObj.value = module.default
+        resultMsg = "";
     })
     .catch( (reason) => {
         console.log("JsonImport Exception:", reason);
+        resultMsg.value = dramaJsonFilename.value;
         jsonObj.value = "";
         }
     )
@@ -32,7 +35,8 @@ const jsonImport = () => {
 jsonImport();
 
 watchEffect( () => {
-        dramaJsonFilename.value = `../../assets/data/drama/${props.site}.${props.id}.json`;
+    //dramaJsonFilename.value = `../../assets/data/drama/${props.site}.${props.id}.json`;
+    dramaJsonFilename.value = `data/drama/${props.site}.${props.id}.json`;
         jsonImport();
         console.log(dramaJsonFilename.value);
     }
@@ -74,6 +78,7 @@ const getJsonData = () => {
 <template>
     <div>
         <h4>{{ jsonObj.dramaTitle }}</h4>
+        <h6>{{ resultMsg }}</h6>
         <a :href="jsonObj.dramaUrl" target="blank">{{ jsonObj.dramaUrl }}</a>
         <img class="dramaCover" :src="jsonObj.dramaCoverUrl" />
         <p v-for="filmSource in jsonObj.filmSources">
