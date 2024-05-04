@@ -66,7 +66,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '/data': '/data'
+      '/data': 'data'
     }
   }
 })
