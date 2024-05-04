@@ -13,7 +13,7 @@ export default defineConfig( ({ command, mode }) => {
   console.log('REPOSITORY NAME : ', env.REPOSITORY_NAME);
 
   return {
-    base: mode === 'production' ? `/${env.REPOSITORY_NAME}/` : '/',
+    base: mode === 'production' ? `./` : '/',
   publicPath: '/dw/',
   plugins: [
     vue(),
