@@ -2,6 +2,8 @@
 import dwWelcome from './components/dwWelcome.vue'
 import dwTest from './components/dwTest.vue'
 import dwColorDemo from './components/dwColorDemo.vue'
+import playground from './components/playground/playground.vue'
+import { QuestionCircleOutlined } from '@ant-design/icons-vue';
 import { ref } from "@vue/reactivity"
 
 const section = ref("welcome")
@@ -32,7 +34,7 @@ const setSubMenuInvisible = () => {
     </div>
 
     <div id="subMenu" class="divSubMenu" v-if="subMenuVisable === true">
-        <h3 class="subMenuItem" @click="setSection('test')">新增影集</h3>
+        <h3 class="subMenuItem" @click="setSection('playground')">遊園地</h3>
         <hr />
         <h3 class="subMenuItem" @click="setSection('demo')">檢視原始資料</h3>
         <hr />
@@ -54,14 +56,22 @@ const setSubMenuInvisible = () => {
 
     <div id="main" class="divContent divMain" v-if="section === 'main'">
         <h1>首頁</h1>
+        <a-popconfirm title="Are you sure？">
+            <template #icon><question-circle-outlined style="color: red" /></template>
+            <a href="#">Delete</a>
+        </a-popconfirm>
     </div>
 
     <div id="test" class="divContent" v-if="section === 'test'">
-        <dwTest />
+        <dwTest dramasite="gimy.ai" dramaid="258606" />
     </div>
 
     <div id="demo" class="divContent" v-if="section === 'demo'">
         <dwColorDemo />
+    </div>
+
+    <div id="playground" class="divContent" v-if="section === 'playground'">
+        <playground />
     </div>
 
 
@@ -69,6 +79,10 @@ const setSubMenuInvisible = () => {
 
 <style>
 @import './assets/base.css';
+
+.a {
+    color: brown;
+}
 
 .divWelcome {
     text-align: center;

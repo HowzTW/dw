@@ -4,4 +4,16 @@ import { createApp } from 'vue'
 //import App from './App.vue'
 import App from './AppDW.vue'
 
-createApp(App).mount('#app')
+import Antd from 'ant-design-vue'
+import AntdIcons from '@ant-design/icons-vue'
+
+
+//antd css
+import 'ant-design-vue/dist/reset.css'
+
+
+//createApp(App).mount('#app')
+
+const app = createApp(App)
+app.use(Antd)
+app.mount('#app')

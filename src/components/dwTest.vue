@@ -1,9 +1,34 @@
 <script setup>
-import { ref } from "@vue/reactivity"
+const props = defineProps({
+  dramaid: {
+    type: String,
+    required: true
+  },
+  dramasite: {
+    type: String,
+    required: true
+  }
+})
 
-import jsonObj from "../assets/data/drama/gimy.ai.258606.json"
+import { ref } from "vue"
+
+
+//import jsonObj from "../assets/data/drama/gimy.ai.258606.json"
+var dramaJsonFilename = ref("");
+var xx = props.dramaid;
+dramaJsonFilename.value = `../assets/data/drama/${props.dramasite}.${props.dramaid}.json`;
+//import jsonObj from dramaJsonFilename.value
+
+let jsonObj = ref("original value"); 
+import(dramaJsonFilename.value)
+.then( (module) => {
+    jsonObj.value = module.default
+});
+
 
 /*
+import { ref } from "@vue/reactivity"
+
 const filename = ref("/data/drama/gimy.ai.258606.json")
 var jsonObj = ref('(blank)')
 
@@ -26,11 +51,11 @@ const getJsonData = () => {
 
 <template>
     <div>
-        <h1>JSON讀寫測試</h1>
+        <h1>{{ dramaJsonFilename }}</h1>
         <p>
             請輸入檔案名稱：<br />
             <input type="text" placeholder="請輸入檔案名稱" /><br />
-            <button >讀取</button><br />
+            <button>讀取</button><br />
             <textarea> {{ jsonObj }}</textarea><br />
         </p>
         <p v-for="filmSource in jsonObj.filmSources">
