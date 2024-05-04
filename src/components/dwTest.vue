@@ -17,7 +17,7 @@ import { ref } from "vue"
 var dramaJsonFilename = ref("");
 var xx = props.dramaid;
 //dramaJsonFilename.value = `../assets/data/drama/${props.dramasite}.${props.dramaid}.json`;
-dramaJsonFilename.value = `/data/drama/${props.dramasite}.${props.dramaid}.json`;
+dramaJsonFilename.value = `data/drama/${props.dramasite}.${props.dramaid}.json`;
 //import jsonObj from dramaJsonFilename.value
 
 let jsonObj = ref("original value"); 

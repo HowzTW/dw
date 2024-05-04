@@ -17,7 +17,7 @@ const jsonObj = ref("original value");
 
 const jsonImport = () => {
     //dramaJsonFilename.value = `../../assets/data/drama/${props.site}.${props.id}.json`;
-    dramaJsonFilename.value = `/data/drama/${props.site}.${props.id}.json`;
+    dramaJsonFilename.value = `data/drama/${props.site}.${props.id}.json`;
     import(dramaJsonFilename.value)
     .then( (module) => {
         jsonObj.value = module.default
