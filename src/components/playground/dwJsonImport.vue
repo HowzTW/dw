@@ -19,7 +19,7 @@ const resultMsg = ref("")
 const jsonImport = () => {
     //dramaJsonFilename.value = `../../assets/data/drama/${props.site}.${props.id}.json`;
     dramaJsonFilename.value = `data/drama/${props.site}.${props.id}.json`;
-    import(dramaJsonFilename.value)
+    fetch(dramaJsonFilename.value)
     .then( (module) => {
         jsonObj.value = module.default
         resultMsg = "";

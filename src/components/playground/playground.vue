@@ -1,9 +1,12 @@
 <script setup>
 import dwJsonImport from './dwJsonImport.vue'
+import dwFilePathCheck from './dwFilePathCheck.vue'
 import { ref } from "vue"
 
 const pl01_id = ref("141191")
 const pl01_site = ref("gimy.ai")
+
+const pl02_filepath = ref("/data/drama/gimy.ai.141191.json")
 </script>
 
 <template>
@@ -15,7 +18,13 @@ const pl01_site = ref("gimy.ai")
             <input type="text" v-model="pl01_site" placeholder="請輸入影集來源網站" />
             <input type="text" v-model="pl01_id" placeholder="請輸入影集編號" />
             <dwJsonImport :site="pl01_site" :id="pl01_id" />
+        </div>
+        <div>
             <hr />
+            <h3>[pg02] 檔案路徑確認</h3>
+            <input type="text" v-model="pl02_filepath" placeholder="請輸入檔案路徑" />
+            <dwFilePathCheck :filepath="pl02_filepath" />
+
         </div>
     </div>
 </template>

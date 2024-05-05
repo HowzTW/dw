@@ -1,5 +1,4 @@
 <script setup>
-import jsonObj from 'data/drama/gimy.ai.258606.json'
 import { ref } from "vue"
 
 </script>
@@ -7,7 +6,6 @@ import { ref } from "vue"
 <template>
     <div class="div100w primary">
     <p>test111</p>
-    <p>{{ jsonObj }}</p>
     </div>
 </template>
 
