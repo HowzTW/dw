@@ -132,6 +132,7 @@ const getJsonData = () => {
 
 <style scoped>
 .dramaCover{
+    max-width: 200px;
     margin: 5px;
     width: 50%;
     border-radius: 10px;
