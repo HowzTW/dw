@@ -73,7 +73,7 @@
 
 /* semantic color variables for this project */
 :root {
-  /*
+  
   --color-background: var(--vt-c-white);
   --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute);
@@ -83,8 +83,9 @@
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
-  */
+  
 
+/*
   --color-background: var(--howztw-dw-c-surface);
   --color-background-soft: var(--howztw-dw-c-surface-soft);
   --color-background-mute: var(--howztw-dw-c-surface-mute);
@@ -94,13 +95,14 @@
 
   --color-heading: var(--howztw-dw-c-primary);
   --color-text: var(--howztw-dw-c-primary);
+*/
 
   --section-gap: 160px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /*
+    
     --color-background: var(--vt-c-black);
     --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute);
@@ -110,7 +112,8 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
-    */
+    
+    /*
     --color-background: var(--howztw-dw-c-surface);
     --color-background-soft: var(--howztw-dw-c-surface-soft);
     --color-background-mute: var(--howztw-dw-c-surface-mute);
@@ -120,7 +123,7 @@
   
     --color-heading: var(--howztw-dw-c-primary);
     --color-text: var(--howztw-dw-c-primary);
-    
+    */
   }
 }
 

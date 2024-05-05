@@ -1,16 +1,22 @@
 <script setup>
-import dwWelcome from './components/dwWelcome.vue'
+import { ref } from "vue"
+import dwWelcome from '@/components/dwWelcome.vue'
 import dwTest from './components/dwTest.vue'
 import dwColorDemo from './components/dwColorDemo.vue'
 import playground from './components/playground/playground.vue'
-import { QuestionCircleOutlined } from '@ant-design/icons-vue';
-import { ref } from "@vue/reactivity"
+import { QuestionCircleOutlined } from '@ant-design/icons-vue'
+
+const user = ref("阿玉")
+const setUser = (value) => {
+    user.value = value;
+}
 
 const section = ref("welcome")
 const setSection = (value) => {
     setSubMenuInvisible();
     section.value = value;
 }
+
 
 const subMenuVisable = ref(false)
 const changeSubMenuVisible = () => {
@@ -19,6 +25,13 @@ const changeSubMenuVisible = () => {
 const setSubMenuInvisible = () => {
     subMenuVisable.value = false;
 }
+
+
+const userChangedHandler = (newUser) => {
+    setUser(newUser);
+    setSection('main');
+}
+
 </script>
 
 <template>
@@ -45,13 +58,9 @@ const setSubMenuInvisible = () => {
 
     </div>
 
+
     <div id="welcome" class="divWelcome" v-if="section === 'welcome'">
-        <dwWelcome />
-        <div class="start" @click="setSection('main')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="5em" height="5em" viewBox="0 0 8 8">
-                <path fill="currentColor" d="M4 0C1.79 0 0 1.79 0 4s1.79 4 4 4s4-1.79 4-4s-1.79-4-4-4M3 2l3 2l-3 2z" />
-            </svg>
-        </div>
+        <dwWelcome :user="user" @userChanged="userChangedHandler" />
     </div>
 
     <div id="main" class="divContent divMain" v-if="section === 'main'">
@@ -74,7 +83,6 @@ const setSubMenuInvisible = () => {
         <playground />
     </div>
 
-
 </template>
 
 <style>
@@ -95,7 +103,8 @@ const setSubMenuInvisible = () => {
 
 .divContent {
     margin: 0px;
-    padding-left: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 80px;
     display: flex;
     place-items: flex-start;
@@ -140,6 +149,7 @@ const setSubMenuInvisible = () => {
 }
 
 .divSubMenu {
+    min-width: 200px;
     background-color: white;
     position: fixed;
     top: 65px;
