@@ -10,6 +10,46 @@ const props = defineProps({
   }
 })
 
+
+import { ref, watch, watchEffect } from "vue"
+var dramaJsonFilename = ref("");
+var resultMsg = ref("");
+var jsonObj = ref("")
+
+const getJsonData = () => {
+    dramaJsonFilename.value = `data/drama/${props.site}.${props.id}.json`;
+    fetch(dramaJsonFilename.value)
+    .then((r) => r.json())
+    .then(
+        (json) => {
+            jsonObj.value = json;
+            resultMsg.value = "";
+            console.log(jsonObj.value);
+        }
+    ) //then
+    .catch( 
+        (reason) => {
+            resultMsg.value = `Error loading json: ${reason} ` 
+            console.log('Error loading json:', reason)
+            jsonObj.value = "";
+        }
+    )
+}
+
+getJsonData();
+
+watchEffect( 
+    () => {
+        //dramaJsonFilename.value = `../../assets/data/drama/${props.site}.${props.id}.json`;
+        dramaJsonFilename.value = `data/drama/${props.site}.${props.id}.json`;
+        getJsonData();
+        console.log(dramaJsonFilename.value);
+    }
+)
+
+
+
+/*
 import { ref, watch, watchEffect } from "vue"
 var dramaJsonFilename = ref("");
 
@@ -49,7 +89,7 @@ watchEffect( () => {
 //         console.log(dramaJsonFilename.value)
 //     }
 // )
-
+*/
 
 
 /*
@@ -77,6 +117,7 @@ const getJsonData = () => {
 
 <template>
     <div>
+        <p>sample id: 141191 or 258606</p>
         <h4>{{ jsonObj.dramaTitle }}</h4>
         <h6>{{ resultMsg }}</h6>
         <a :href="jsonObj.dramaUrl" target="blank">{{ jsonObj.dramaUrl }}</a>

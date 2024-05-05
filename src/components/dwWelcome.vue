@@ -10,7 +10,7 @@
             <path fill="currentColor" d="M0 0v3l5 5l3-3l-5-5zm2 1c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1" />
         </svg>
 
-        version: 0.1 (released: 2024-05-05 14:35)
+        version: 0.1 (released: 2024-05-05 14:52)
     </small>
 </template>
 

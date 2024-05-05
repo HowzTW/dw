@@ -6,7 +6,7 @@ import { ref } from "vue"
 const pl01_id = ref("141191")
 const pl01_site = ref("gimy.ai")
 
-const pl02_filepath = ref("/data/drama/gimy.ai.141191.json")
+const pl02_filepath = ref("XXXXXdata/drama/gimy.ai.141191.json")
 </script>
 
 <template>
