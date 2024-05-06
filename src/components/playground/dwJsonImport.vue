@@ -47,7 +47,37 @@ watchEffect(
     }
 )
 
+const episodeButtonType = (episodeId) => {
+    return 'default';
+}
 
+const playEpisodeUrl = ref('https://m3u.haiwaikan.com/xm3u8/137bef9978fd7b0642e71a49d9e2b64be23e0969fe0a59107756273398814aed9921f11e97d0da21.m3u8')
+// const setClipurl = (value) => {
+//     clipurl.value = value;
+// }
+
+const playTitle = ref("繁花")
+// const setPlayTitle = (value) => {
+//     playTitle.value = value;
+// }
+
+const playFilmSource = ref("海外雲")
+// const setPlayFilmSource = (value) => {
+//     playFilmSource.value = value;
+// }
+
+const playEpisodeName = ref("第1集")
+// const setPlayEpisodeName = (value) => {
+//     playEpisodeName.value = value;
+// }
+
+const playVideo = (title, filmsource, episodename, episodeurl) =>
+{
+    playTitle.value = title;
+    playFilmSource.value = filmsource;
+    playEpisodeName.value = episodename;
+    playEpisodeUrl.value = episodeurl;
+}
 
 /*
 import { ref, watch, watchEffect } from "vue"
@@ -120,21 +150,39 @@ const getJsonData = () => {
         <p>sample id: 141191 or 258606</p>
         <h4>{{ jsonObj.dramaTitle }}</h4>
         <h6>{{ resultMsg }}</h6>
+        <div class="divVideo">
+            <h4>{{ playTitle }}</h4>
+            <p>{{ playFilmSource }} - {{ playEpisodeName }}</p>
+            <video class="dwVideo" :src="playEpisodeUrl" controls autoplay />
+            <input type="text" :value="playEpisodeUrl"/>
+        </div>
         <a :href="jsonObj.dramaUrl" target="blank">{{ jsonObj.dramaUrl }}</a>
         <img class="dramaCover" :src="jsonObj.dramaCoverUrl" />
         <p v-for="filmSource in jsonObj.filmSources">
             {{ filmSource.filmSourceName }}
-            <a v-for="episode in filmSource.episodes" :href="episode.episodeUrl" target="blank"> {{ episode.episodeName }}</a>
+            <a-space v-for="episode in filmSource.episodes" size="large" wrap>
+                <a-button :type="episodeButtonType(episode.episodeId)" size="large" @click="playVideo(jsonObj.dramaTitle, filmSource.filmSourceName, episode.episodeName, episode.episodeUrl)">{{ episode.episodeName }}</a-button>
+            </a-space>
         </p>
 
     </div>
 </template>
 
 <style scoped>
+.divVideo {
+    width: 100%;
+    align-items: center;
+}
+
+.dwVideo {
+    max-width: 700px;
+    width: 80%;
+}
+
 .dramaCover{
-    max-width: 200px;
+    max-width: 500px;
     margin: 5px;
-    width: 50%;
+    width: 40%;
     border-radius: 10px;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
 
