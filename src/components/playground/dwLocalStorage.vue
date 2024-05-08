@@ -23,12 +23,12 @@ const text = JSON.stringify(state2._value)
 
 <template>
   <div>
+    <p>HELLO</p>
     <input v-model="state.name" type="text">
     <input v-model="state.color" type="text">
     <input v-model="state.size" type="text">
     <input v-model.number="state.count" type="range" min="0" step="0.01" max="1000">
 
-    <pre lang="json">{{ text }}</pre>
     <dwJsonStringify :jsonStr="text" />
   </div>
 </template>
