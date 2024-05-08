@@ -31,7 +31,7 @@ const pl02_filepath = ref("XXXXXdata/drama/gimy.ai.141191.json")
 
         </div>
         <div>
-            <h3>[pl03]</h3>
+            <h3>[pl03] Local Storage</h3>
             <dwLocalStorage />
         </div>
     </div>
