@@ -1,6 +1,10 @@
 <script setup>
 import dwJsonImport from './dwJsonImport.vue'
 import dwFilePathCheck from './dwFilePathCheck.vue'
+//import dwJsonRW from './dwJsonRW.vue'
+import dwLocalStorage from './dwLocalStorage.vue'
+
+
 import { ref } from "vue"
 
 const pl01_id = ref("141191")
@@ -21,10 +25,14 @@ const pl02_filepath = ref("XXXXXdata/drama/gimy.ai.141191.json")
         </div>
         <div>
             <hr />
-            <h3>[pg02] 檔案路徑確認</h3>
+            <h3>[pl02] 檔案路徑確認</h3>
             <input type="text" v-model="pl02_filepath" placeholder="請輸入檔案路徑" />
             <dwFilePathCheck :filepath="pl02_filepath" />
 
+        </div>
+        <div>
+            <h3>[pl03]</h3>
+            <dwLocalStorage />
         </div>
     </div>
 </template>
