@@ -12,6 +12,7 @@ const props = defineProps({
 
 
 import { ref, watch, watchEffect } from "vue"
+
 var dramaJsonFilename = ref("");
 var resultMsg = ref("");
 var jsonObj = ref("")
@@ -144,6 +145,7 @@ const getJsonData = () => {
 */
 
 </script>
+
 
 <template>
     <div>

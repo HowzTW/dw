@@ -8,7 +8,6 @@ const setUser = (value) => {
 
 const emit = defineEmits(['userChanged']);
 watch( currentUser, (newValue, oldValue) => {
-    console.log("NEW USER!");
     emit('userChanged', newValue);
 })
 
@@ -16,13 +15,11 @@ watch( currentUser, (newValue, oldValue) => {
 
 <template>
     <a-flex vertical justify="center" align="center" gap="middle">
-        <a-flex justify="center">
-            <p class="appName">追 劇 小 幫 手{{ currentUser }}</p>
-        </a-flex>
         <a-flex wrap justify="center" align="center"  gap="middle">
             <a-flex>
-                <img class="logo" src="/images/icon-512.png" />
+                <img class="logo" src="/images/icon-512.png" @click="setUser('阿玉')" />
             </a-flex>
+            <!--
             <a-flex vertical align="start" justify="center" gap="small">
                 <div>
                     <h3>誰在觀賞影片？</h3>
@@ -58,13 +55,17 @@ watch( currentUser, (newValue, oldValue) => {
                     </a-space>
                 </div>
             </a-flex>
+            -->
+        </a-flex>
+        <a-flex justify="center">
+            <p class="appName">追 劇 小 幫 手{{ currentUser }}</p>
         </a-flex>
         <a-flex justify="center" center="center" gap="middle">
             <div class="divVersion">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 8 8">
                     <path fill="currentColor" d="M0 0v3l5 5l3-3l-5-5zm2 1c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1" />
                 </svg>
-                version: 0.1 (released: 2024-05-08 11:08)
+                version: 0.1 (released: 2024-05-10 00:37)
             </div>
         </a-flex>
     </a-flex>
@@ -73,18 +74,19 @@ watch( currentUser, (newValue, oldValue) => {
 <style scoped>
 
 .divVersion {
-    margin-top: 30px;
+    margin-top: 0px;
 }
 
 .appName {
     font-size: xx-large;
-    margin-top: 30px;
     font-weight: bolder;
     vertical-align: middle;
+    margin: 0px;
 }
 
 .logo {
-    max-width: 180px;
+    margin-top: 80px;
+    max-width: 256px;
     border-radius: 10px;
     filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7))
 }
