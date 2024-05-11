@@ -1,0 +1,73 @@
+{
+    "filmSources": [
+        {
+            "filmSourceId": "258606-01",
+            "episodes": [
+                {
+                    "episodeId": "258606-01-001",
+                    "episodeName": "第01集",
+                    "episodeUrl": "https://play.subokk.com/play/DbDngPke/index.m3u8"
+                },
+                {
+                    "episodeUrl": "https://play.subokk.com/play/1aMzYx1b/index.m3u8",
+                    "episodeName": "第02集",
+                    "episodeId": "258606-01-002"
+                }
+            ],
+            "filmSourceName": "速播雲"
+        },
+        {
+            "filmSourceId": "258606-02",
+            "filmSourceName": "極速雲",
+            "episodes": [
+                {
+                    "episodeUrl": "https://vv.jisuzyv.com/play/QdJwolye/index.m3u8",
+                    "episodeId": "258606-02-001",
+                    "episodeName": "第01集"
+                },
+                {
+                    "episodeUrl": "https://vv.jisuzyv.com/play/ZdPD2A6d/index.m3u8",
+                    "episodeName": "第02集",
+                    "episodeId": "258606-02-002"
+                }
+            ]
+        },
+        {
+            "filmSourceName": "光速雲",
+            "episodes": [
+                {
+                    "episodeUrl": "https://v.gsuus.com/play/6dB0WQoa/index.m3u8",
+                    "episodeName": "第01集",
+                    "episodeId": "258606-03-001"
+                },
+                {
+                    "episodeUrl": "https://v.gsuus.com/play/wdLyXwve/index.m3u8",
+                    "episodeId": "258606-03-002",
+                    "episodeName": "第02集"
+                }
+            ],
+            "filmSourceId": "258606-03"
+        },
+        {
+            "filmSourceName": "豪華雲",
+            "episodes": [
+                {
+                    "episodeName": "第01集",
+                    "episodeId": "258606-04-001",
+                    "episodeUrl": "https://play.hhuus.com/play/RdGqlg5a/index.m3u8"
+                },
+                {
+                    "episodeId": "258606-04-002",
+                    "episodeUrl": "https://play.hhuus.com/play/YaOB1zEe/index.m3u8",
+                    "episodeName": "第02集"
+                }
+            ],
+            "filmSourceId": "258606-04"
+        }
+    ],
+    "dramaTitle": "東京鐵塔",
+    "dramaCoverUrl": "https://img.1777cdn.com/upload/vod/20240423-1/9e95957c502b2fa7ce64b71429948cda.jpg",
+    "dramaId": "258606",
+    "dramaUrl": "https://gimy.ai/vod/258606.html",
+    "dramaSite": "gimy.ai"
+}
