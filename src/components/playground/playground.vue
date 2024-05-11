@@ -14,8 +14,8 @@ const setPl = (value) => {
 }
  
 
-const pl01_id = ref("141191")
-const pl01_site = ref("gimy.ai")
+const pl01_id = ref("312")
+const pl01_site = ref("pttplay.co")
 
 const pl02_filepath = ref("XXXXXdata/drama/gimy.ai.141191.json")
 </script>
