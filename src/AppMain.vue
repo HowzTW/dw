@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue"
 import dwWelcome from '@/components/dwWelcome.vue'
+import dwSystemReset from './components/dwSystemReset.vue'
 import dwTest from './components/dwTest.vue'
 import dwColorDemo from './components/dwColorDemo.vue'
 import playground from './components/playground/playground.vue'
@@ -49,7 +50,7 @@ const userChangedHandler = (newUser) => {
     <div id="subMenu" class="divSubMenu" v-if="subMenuVisable === true">
         <h3 class="subMenuItem" @click="setSection('playground')">遊園地</h3>
         <hr />
-        <h3 class="subMenuItem" @click="setSection('demo')">檢視原始資料</h3>
+        <h3 class="subMenuItem" @click="setSection('sysreset')">系統資料重設</h3>
         <hr />
         <h3 class="subMenuItem" @click="setSection('test')">清除全部影集</h3>
         <hr />
@@ -77,6 +78,10 @@ const userChangedHandler = (newUser) => {
 
     <div id="demo" class="divContent" v-if="section === 'demo'">
         <dwColorDemo />
+    </div>
+
+    <div id="sysreset" class="divContent" v-if="section === 'sysreset'">
+        <dwSystemReset />
     </div>
 
     <div id="playground" class="divContent" v-if="section === 'playground'">

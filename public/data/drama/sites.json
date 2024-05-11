@@ -1,6 +1,22 @@
 {
     "sites": [
-        "gimy.ai",
-        "gimy.app"
+        {
+            "dramaSite": "gimy.ai",
+            "dramaIds":
+            [
+                "141191",
+                "258606"
+            ]
+        },
+        {
+            "dramaSite": "pttplay.co",
+            "dramaIds":
+            [
+                "312",
+                "256822",
+                "257106"
+            ]
+        }
+
     ]
 }

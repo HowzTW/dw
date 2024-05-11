@@ -150,7 +150,7 @@ const getJsonData = () => {
 <template>
     <div>
         <p>sample id: gimy.ai - 141191 or 258606</p>
-        <p>sample id: pttplay.co - 312 or 257106</p>
+        <p>sample id: pttplay.co - 312 or 257106 or 256822</p>
         <h4>{{ jsonObj.dramaTitle }}</h4>
         <h6>{{ resultMsg }}</h6>
         <div class="divVideo">

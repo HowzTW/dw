@@ -43,18 +43,6 @@ function dwInitAppLocalStorage() {
     for(let i = 0; i < numKeys; i++) {
         localStorage.removeItem(localStorage.key(0));
     }
-    dwGetSites();
-}
-
-function dwGetSites()
-{
-    let sites = [];
-    let sitesObj = ref("");
-    dwFetchJsonFile('data/drama/sites.json', sitesObj);
-    sitesObj.sites[0]
-    console.log('[dwGetSites] sitesObj._value.sites.length:  ', sitesObj.sites[0]);
-
-    //localStorage.setItem('dwAllSites', JSON.stringify(sitesObj));
 }
 
 
@@ -64,7 +52,6 @@ export {
     dwMyDramaListAdd,
     dwDramaFilename,
     dwInitAppLocalStorage,
-    dwGetSites,
 }
 
 

@@ -46,6 +46,7 @@ for(var i=0; i<obj.dramas.length; i++)
 }
 
 console.log('C: ', localStorage);
+const length = localStorage.key(0)
 
 </script>
 
@@ -61,5 +62,6 @@ console.log('C: ', localStorage);
     ></a-select>
     </a-space>
     {{ value1 }}
+    {{ length }}
     </div>
 </template>
