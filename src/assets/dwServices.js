@@ -1,5 +1,75 @@
 import { ref } from "vue"
-import { useLocalStorage } from '@vueuse/core'
+
+function dwFetchJsonFile(jsonFilename, jsonObj) {
+    fetch(jsonFilename)
+    .then((r) => r.json())
+    .then(
+        (json) => {
+            jsonObj.value = json;
+            //console.log('(dwFetchJsonFile) Done: ', jsonObj.value);
+        }
+    ) //then
+    .catch( 
+        (reason) => {
+            console.log('(dwFetchJsonFile) Error: ', reason)
+            jsonObj.value = "";
+        }
+    );
+    //console.log('(dwFetchJsonFile) jsonObj: ', jsonObj)
+}
+
+
+function dwMyDramaListReset() {
+    localStorage.removeItem('dwMyDramaList');
+    localStorage.setItem('dwMyDramaList', JSON.stringify({ dramas: []}));
+}
+
+
+function dwMyDramaListAdd(dramaSite, dramaId) {
+    const filename = dwDramaFilename(dramaSite, dramaId);
+    let myDramaListObj = JSON.parse(localStorage.getItem('dwMyDramaList'));
+    myDramaListObj.dramas.push(filename);
+    localStorage.setItem('dwMyDramaList', JSON.stringify(myDramaListObj));
+
+}
+
+
+function dwDramaFilename(dramaSite, dramaId) {
+    return `data/drama/${dramaSite}.${dramaId}.json`;
+}
+
+function dwInitAppLocalStorage() {
+    const numKeys = localStorage.length;
+    for(let i = 0; i < numKeys; i++) {
+        localStorage.removeItem(localStorage.key(0));
+    }
+    dwGetSites();
+}
+
+function dwGetSites()
+{
+    let sites = [];
+    let sitesObj = ref("");
+    dwFetchJsonFile('data/drama/sites.json', sitesObj);
+    sitesObj.sites[0]
+    console.log('[dwGetSites] sitesObj._value.sites.length:  ', sitesObj.sites[0]);
+
+    //localStorage.setItem('dwAllSites', JSON.stringify(sitesObj));
+}
+
+
+export {
+    dwFetchJsonFile,
+    dwMyDramaListReset,
+    dwMyDramaListAdd,
+    dwDramaFilename,
+    dwInitAppLocalStorage,
+    dwGetSites,
+}
+
+
+//import { ref } from "vue"
+//import { useLocalStorage } from '@vueuse/core'
 
 
 // function dwFetchJsonFile(jsonFilename) {
@@ -26,25 +96,7 @@ import { useLocalStorage } from '@vueuse/core'
 //     return jsonObj;
 // } 
 
-function dwFetchJsonFile(jsonFilename, jsonObj) {
-    fetch(jsonFilename)
-    .then((r) => r.json())
-    .then(
-        (json) => {
-            jsonObj.value = json;
-            //console.log('(dwFetchJsonFile) Done: ', jsonObj.value);
-        }
-    ) //then
-    .catch( 
-        (reason) => {
-            console.log('(dwFetchJsonFile) Error: ', reason)
-            jsonObj.value = "";
-        }
-    );
 
-    //console.log('(dwFetchJsonFile) jsonObj: ', jsonObj)
-
-}
 
 
 // function dwMyDramaListReset() {
@@ -62,20 +114,6 @@ function dwFetchJsonFile(jsonFilename, jsonObj) {
 // }
 
 
-
-
-function dwMyDramaListReset() {
-    localStorage.removeItem('dwMyDramaList');
-    localStorage.setItem('dwMyDramaList', JSON.stringify({ dramas: []}));
-}
-
-function dwMyDramaListAdd(dramaSite, dramaId) {
-    const filename = dwDramaFilename(dramaSite, dramaId);
-    var myDramaListObj = JSON.parse(localStorage.getItem('dwMyDramaList'));
-    myDramaListObj.dramas.push(filename);
-    localStorage.setItem('dwMyDramaList', JSON.stringify(myDramaListObj));
-
-}
 
 
 
@@ -118,18 +156,3 @@ function dwMyDramaListAdd(dramaSite, dramaId) {
 //     //stateMyDramaList.dramas.push(dramaObj);
 //     // return stateMyDramaList;
 // }
-
-
-function dwDramaFilename(dramaSite, dramaId) {
-    return `data/drama/${dramaSite}.${dramaId}.json`;
-}
-
-
-
-
-export {
-    dwFetchJsonFile,
-    dwMyDramaListReset,
-    dwMyDramaListAdd,
-    dwDramaFilename
-}

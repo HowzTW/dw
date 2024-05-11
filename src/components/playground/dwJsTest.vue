@@ -1,14 +1,22 @@
 <script setup>
 import { ref } from "vue"
-import { dwDramaFilename } from '/src/assets/dwServices.js'
-import { dwFetchJsonFile } from '/src/assets/dwServices.js'
+//import { dwDramaFilename } from '/src/assets/dwServices.js'
+//import { dwFetchJsonFile } from '/src/assets/dwServices.js'
 import { dwMyDramaListReset } from '/src/assets/dwServices.js'
 import { dwMyDramaListAdd } from '/src/assets/dwServices.js'
+import { dwInitAppLocalStorage } from '/src/assets/dwServices.js'
 
 
 // const filename = dwDramaFilename("gimy.ai", "258606");
 // var dramaObj = ref("");
 // dramaObj = dwFetchJsonFile(filename);
+
+
+console.log('A: ', localStorage);
+dwInitAppLocalStorage();
+console.log('B: ', localStorage);
+
+
 var myDramaList;
 dwMyDramaListReset();
 dwMyDramaListAdd("gimy.ai", "258606");
@@ -37,13 +45,14 @@ for(var i=0; i<obj.dramas.length; i++)
     })
 }
 
+console.log('C: ', localStorage);
 
 </script>
 
 <template>
     <div>
         <p>JS Test</p>
-        <p>Locsl Storage: {{ obj.dramas.length }}</p>
+        <p>Locsl Storage: {{ obj }}</p>
         <a-space>
             <a-select
       v-model:value="value1"
