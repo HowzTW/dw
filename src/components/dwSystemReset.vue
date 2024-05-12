@@ -7,8 +7,10 @@ import { dwInitAppLocalStorage } from '/src/assets/dwServices.js'
 
 const passwd = ref("");
 let userRole = ""; //空字串
-let myDramaHistory = ["pttplay.co.312", "pttplay.co.257106"] //空陣列
+let myDramaHistory = ["pttplay.co.257106", "pttplay.co.256822"] //空陣列
 let myEpisodeHistory = {} //空字典
+let mySites = ["pttplay.co", "gimy.ai"] //空字典
+
 
 const sysInit = () => {
     dwInitAppLocalStorage();
@@ -18,6 +20,7 @@ const sysInit = () => {
     
     localStorage.setItem('dwMyDramaHistory', JSON.stringify(myDramaHistory));
     localStorage.setItem('dwMyEpisodeHistory', JSON.stringify(myEpisodeHistory));
+    localStorage.setItem('dwMySites', JSON.stringify(mySites));
 
     retrieveLocalStorage();
     Modal.success({
@@ -80,17 +83,17 @@ retrieveLocalStorage();
 </script>
 
 <template>
-    <a-flex vertical justify="flex-start" style="width: 100%">
+    <a-flex vertical justify="flex-start" style="width: 100%" gap="small">
         <a-flex>
             <h1>系統資料重設</h1>
         </a-flex>
-        <a-flex wrap>
+        <a-flex vertical>
             <a-flex>
                 <h3>請輸入密碼：</h3>
             </a-flex>
             <a-flex>
                 <a-input-group compact>
-                    <a-input-password v-model:value="passwd" style="width: calc(100% - 100px)" />
+                    <a-input-password v-model:value="passwd" style="width: 200px" />
                     <a-button type="primary" @click="confirm">重設</a-button>
                 </a-input-group>
             </a-flex>

@@ -2,11 +2,11 @@
 import { ref } from "vue"
 import dwWelcome from '@/components/dwWelcome.vue'
 import dwSystemReset from './components/dwSystemReset.vue'
-import dwTest from './components/dwTest.vue'
-import dwColorDemo from './components/dwColorDemo.vue'
+import dwNewDrama from './components/dwNewDrama.vue'
+//import dwTest from './components/dwTest.vue'
+//import dwColorDemo from './components/dwColorDemo.vue'
 import dwMain from './components/dwMain.vue'
 import playground from './components/playground/playground.vue'
-import { QuestionCircleOutlined } from '@ant-design/icons-vue'
 
 let user = ref("")
 const setUser = (value) => {
@@ -41,6 +41,7 @@ const userChangedHandler = (newUser) => {
     <div id="menu" class="divMenu" v-if="section !== 'welcome'">
         <img class="menuLogo" @click="setSection('main')" src="/images/icon-512.png" />
         <h1 class="menuTitle">追劇小幫手</h1>
+        <small>{{ section }}</small>
         <div class="menuButton" @click="changeSubMenuVisible()">
             <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" viewBox="0 0 24 24">
                 <path fill="currentColor"
@@ -59,7 +60,7 @@ const userChangedHandler = (newUser) => {
             <hr />
         </div>
         <div>
-            <h3 class="subMenuItem" @click="setSection('test')">清除全部影集</h3>
+            <h3 class="subMenuItem" @click="setSection('newdrama')">新增影集</h3>
             <hr />
         </div>
         <div>
@@ -77,17 +78,14 @@ const userChangedHandler = (newUser) => {
         <dwMain />
     </div>
 
-    <div id="test" class="divContent" v-if="section === 'test'">
-        <dwTest dramasite="gimy.ai" dramaid="258606" />
-    </div>
-
-    <div id="demo" class="divContent" v-if="section === 'demo'">
-        <dwColorDemo />
-    </div>
-
     <div id="sysreset" class="divContent" v-if="section === 'sysreset'">
         <dwSystemReset />
     </div>
+
+    <div id="sysreset" class="divContent" v-if="section === 'newdrama'">
+        <dwNewDrama />
+    </div>
+
 
     <div id="playground" class="divContent" v-if="section === 'playground'">
         <playground />
@@ -97,6 +95,24 @@ const userChangedHandler = (newUser) => {
 
 <style>
 @import './assets/base.css';
+
+.imgCover {
+    border-radius: 10px;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
+}
+
+
+.buttonPrimary {
+    background-color: var(--howztw-dw-c-primary);
+    color:var(--howztw-dw-c-primary-on);
+}
+
+.buttonAlert {
+    background-color: var(--howztw-dw-c-alert);
+    color:var(--howztw-dw-c-alert-on);
+    font-weight: bolder;
+}
+
 
 .a {
     color: brown;
