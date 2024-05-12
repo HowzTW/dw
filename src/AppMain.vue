@@ -4,10 +4,11 @@ import dwWelcome from '@/components/dwWelcome.vue'
 import dwSystemReset from './components/dwSystemReset.vue'
 import dwTest from './components/dwTest.vue'
 import dwColorDemo from './components/dwColorDemo.vue'
+import dwMain from './components/dwMain.vue'
 import playground from './components/playground/playground.vue'
 import { QuestionCircleOutlined } from '@ant-design/icons-vue'
 
-const user = ref("阿玉")
+let user = ref("")
 const setUser = (value) => {
     user.value = value;
 }
@@ -29,7 +30,8 @@ const setSubMenuInvisible = () => {
 
 
 const userChangedHandler = (newUser) => {
-    setUser(newUser);
+    //setUser(newUser);
+    user.value = localStorage.getItem('dwUserRole');
     setSection('main');
 }
 
@@ -48,15 +50,22 @@ const userChangedHandler = (newUser) => {
     </div>
 
     <div id="subMenu" class="divSubMenu" v-if="subMenuVisable === true">
-        <h3 class="subMenuItem" @click="setSection('playground')">遊園地</h3>
-        <hr />
-        <h3 class="subMenuItem" @click="setSection('sysreset')">系統資料重設</h3>
-        <hr />
-        <h3 class="subMenuItem" @click="setSection('test')">清除全部影集</h3>
-        <hr />
-        <h3 class="subMenuItem" @click="setSection('welcome')">檢視觀看紀錄</h3>
-        <hr />
-
+        <div v-if="user === 'admin'">
+            <h3 class="subMenuItem" @click="setSection('playground')" >遊園地</h3>
+            <hr />
+        </div>
+        <div>
+            <h3 class="subMenuItem" @click="setSection('sysreset')">系統資料重設</h3>
+            <hr />
+        </div>
+        <div>
+            <h3 class="subMenuItem" @click="setSection('test')">清除全部影集</h3>
+            <hr />
+        </div>
+        <div>
+            <h3 class="subMenuItem" @click="setSection('welcome')">檢視觀看紀錄</h3>
+            <hr />
+        </div>
     </div>
 
 
@@ -64,12 +73,8 @@ const userChangedHandler = (newUser) => {
         <dwWelcome :user="user" @userChanged="userChangedHandler" />
     </div>
 
-    <div id="main" class="divContent divMain" v-if="section === 'main'">
-        <h1>首頁</h1>
-        <a-popconfirm title="Are you sure？">
-            <template #icon><question-circle-outlined style="color: red" /></template>
-            <a href="#">Delete</a>
-        </a-popconfirm>
+    <div id="main" class="divContent" v-if="section === 'main'">
+        <dwMain />
     </div>
 
     <div id="test" class="divContent" v-if="section === 'test'">
@@ -107,6 +112,7 @@ const userChangedHandler = (newUser) => {
 }
 
 .divContent {
+    width: 100%;
     margin: 0px;
     padding-left: 10px;
     padding-right: 10px;

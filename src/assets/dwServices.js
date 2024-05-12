@@ -26,17 +26,22 @@ function dwMyDramaListReset() {
 
 
 function dwMyDramaListAdd(dramaSite, dramaId) {
-    const filename = dwDramaFilename(dramaSite, dramaId);
+    const filename = dwDramaFilename1(dramaSite, dramaId);
     let myDramaListObj = JSON.parse(localStorage.getItem('dwMyDramaList'));
     myDramaListObj.dramas.push(filename);
     localStorage.setItem('dwMyDramaList', JSON.stringify(myDramaListObj));
 
 }
 
-
-function dwDramaFilename(dramaSite, dramaId) {
-    return `data/drama/${dramaSite}.${dramaId}.json`;
+function dwDramaFilename1(dramaSite, dramaId) {
+    return dwDramaFilename(`${dramaSite}.${dramaId}`)
+    //return `data/drama/${dramaSite}.${dramaId}.json`;
 }
+
+function dwDramaFilename(dramaSiteAndId) {
+    return `data/drama/${dramaSiteAndId}.json`;
+}
+
 
 function dwInitAppLocalStorage() {
     const numKeys = localStorage.length;
@@ -52,6 +57,7 @@ export {
     dwMyDramaListAdd,
     dwDramaFilename,
     dwInitAppLocalStorage,
+    dwDramaFilename1,
 }
 
 

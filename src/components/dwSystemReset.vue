@@ -6,32 +6,63 @@ import { dwInitAppLocalStorage } from '/src/assets/dwServices.js'
 
 
 const passwd = ref("");
+let userRole = ""; //空字串
+let myDramaHistory = ["pttplay.co.312", "pttplay.co.257106"] //空陣列
+let myEpisodeHistory = {} //空字典
+
+const sysInit = () => {
+    dwInitAppLocalStorage();
+
+    userRole = (passwd.value == '12345678') ? "admin" : "user";
+    localStorage.setItem('dwUserRole', userRole);
+    
+    localStorage.setItem('dwMyDramaHistory', JSON.stringify(myDramaHistory));
+    localStorage.setItem('dwMyEpisodeHistory', JSON.stringify(myEpisodeHistory));
+
+    retrieveLocalStorage();
+    Modal.success({
+        title: '完成',
+        content: '已經完成系統資料重設！',
+    });
+}
 
 const confirm = () => {
-    if(passwd.value == '12345678') {
-        Modal.confirm({
-            title: '資料重設之後將無法回覆',
-            icon: createVNode(ExclamationCircleOutlined),
-            content: '請問確認是否要將系統資料重設嗎？',
-            okText: '確定',
-            cancelText: '取消',
-            onOk() {
-                dwInitAppLocalStorage();
-                retrieveLocalStorage();
-                Modal.success({
-                    title: '完成',
-                    content: '已經完成系統資料重設！',
-                });
-            }
-        });
-    }
-    else {
-        Modal.error({
-            title: '重設密碼錯誤',
-            content: '很抱歉！密碼錯誤無法執行系統資料重設！',
-            okText: '關閉'
-        });
-    }
+    // if(passwd.value == '12345678') {
+    //     Modal.confirm({
+    //         title: '資料重設之後將無法回覆',
+    //         icon: createVNode(ExclamationCircleOutlined),
+    //         content: '請問確認是否要將系統資料重設嗎？',
+    //         okText: '確定',
+    //         cancelText: '取消',
+    //         onOk() {
+    //             dwInitAppLocalStorage();
+    //             retrieveLocalStorage();
+    //             Modal.success({
+    //                 title: '完成',
+    //                 content: '已經完成系統資料重設！',
+    //             });
+    //         }
+    //     });
+    // }
+    // else {
+    //     Modal.error({
+    //         title: '重設密碼錯誤',
+    //         content: '很抱歉！密碼錯誤無法執行系統資料重設！',
+    //         okText: '關閉'
+    //     });
+    // }
+        
+    Modal.confirm({
+        title: '資料重設之後將無法回覆',
+        icon: createVNode(ExclamationCircleOutlined),
+        content: '請問確認是否要將系統資料重設嗎？',
+        okText: '確定',
+        cancelText: '取消',
+        onOk() {
+            sysInit();
+        }
+    });
+
 }
 
 const localStorageData = ref("");
@@ -55,7 +86,7 @@ retrieveLocalStorage();
         </a-flex>
         <a-flex wrap>
             <a-flex>
-                <h3>請輸入重設密碼：</h3>
+                <h3>請輸入密碼：</h3>
             </a-flex>
             <a-flex>
                 <a-input-group compact>
