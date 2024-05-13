@@ -30,7 +30,7 @@ const newDrama = () => {
     pos.value = myDramaHistory.indexOf(newItem);
     if( pos.value > -1 ) {
         myDramaHistory.splice(pos.value, 1);
-        myDramaHistory.push(newItem);
+        myDramaHistory.unshift(newItem);
         localStorage.setItem('dwMyDramaHistory', JSON.stringify(myDramaHistory));
         mylist.value = JSON.parse(localStorage.getItem('dwMyDramaHistory'));
         Modal.success({
@@ -45,7 +45,7 @@ const newDrama = () => {
         .then((r) => r.json())
         .then(
             (json) => {
-                myDramaHistory.push(newItem);
+                myDramaHistory.unshift(newItem);
                 localStorage.setItem('dwMyDramaHistory', JSON.stringify(myDramaHistory));
                 mylist.value = JSON.parse(localStorage.getItem('dwMyDramaHistory'));
                 Modal.success({
