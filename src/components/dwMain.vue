@@ -1,19 +1,15 @@
 <script setup>
 import { ref } from "vue"
-import { Modal } from 'ant-design-vue';
+
 // import { dwFetchJsonFile } from '/src/assets/dwServices.js'
 import dwDramaInfo from '@/components/dwDramaInfo.vue'
 //import dwWelcome from '@/components/dwWelcome.vue'
 
 let myDramaHistory = JSON.parse(localStorage.getItem('dwMyDramaHistory'));
-let removedFlag = ref("");
+const componentKey = ref(0);
 const dramaRemovedHandler = (newValue) => {
     myDramaHistory = JSON.parse(localStorage.getItem('dwMyDramaHistory'));
-    removedFlag.value = newValue;
-    Modal.success({
-        title: '完成',
-        content: `已刪除影集 ！`,
-    });
+    componentKey.value += 1;
 }
 
 
@@ -26,12 +22,14 @@ const dramaRemovedHandler = (newValue) => {
 </script>
 
 <template>
-    <a-flex vertical justify="flex-start" style="width: 100%">
-        <a-flex vertical v-for="drama in myDramaHistory">
-            <a-flex>
-                <dwDramaInfo :siteAndId="drama" @dramaRemoved="dramaRemovedHandler"/>
-            </a-flex>
-        </a-flex>
+    <a-flex vertical justify="flex-start" style="width: 100%; margin: 0px; padding: 0px;">
+        <a-list size="large" :data-source="myDramaHistory" style="width: 100%; margin: 0px; padding: 0px;" :key="componentKey">
+            <template #renderItem="{ item }">
+            <a-list-item style="width: 100%; margin: 0px; padding: 0px;">
+                <dwDramaInfo :siteAndId="item" @dramaRemoved="dramaRemovedHandler" />
+            </a-list-item>
+            </template>
+        </a-list>
     </a-flex>
 </template>
 
