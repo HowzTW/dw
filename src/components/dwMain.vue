@@ -23,9 +23,9 @@ const dramaRemovedHandler = (newValue) => {
 
 <template>
     <a-flex vertical justify="flex-start" style="width: 100%; margin: 0px; padding: 0px;">
-        <a-list size="large" :data-source="myDramaHistory" style="width: 100%; margin: 0px; padding: 0px;" :key="componentKey">
+        <a-list size="large" bordered :data-source="myDramaHistory" style="width: 100%" :key="componentKey">
             <template #renderItem="{ item }">
-            <a-list-item style="width: 100%; margin: 0px; padding: 0px;">
+            <a-list-item style="width: 100%; margin: 0px; padding: 10px;">
                 <dwDramaInfo :siteAndId="item" @dramaRemoved="dramaRemovedHandler" />
             </a-list-item>
             </template>
@@ -33,6 +33,3 @@ const dramaRemovedHandler = (newValue) => {
     </a-flex>
 </template>
 
-<style scoped>
-
-</style>

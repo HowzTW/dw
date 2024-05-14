@@ -13,8 +13,10 @@ import { Modal } from 'ant-design-vue';
 import { watch, defineEmits } from 'vue';
 //import { ExclamationCircleOutlined } from '@ant-design/icons-vue';
 //import { DeleteOutlined } from "@ant-design/icons-vue"
-import { CloseOutlined } from "@ant-design/icons-vue"
-
+//import { CloseOutlined } from "@ant-design/icons-vue"
+import { CaretRightOutlined } from "@ant-design/icons-vue"
+import { CloseSquareTwoTone } from "@ant-design/icons-vue"
+import { FastBackwardFilled, PlayCircleFilled, FastForwardFilled } from "@ant-design/icons-vue"
 let removedFlag = ref("");
 const removeEmit = defineEmits(['dramaRemoved']);
 watch( removedFlag, (newValue, oldValue) => {
@@ -31,7 +33,6 @@ let myDramaHistory = JSON.parse(localStorage.getItem('dwMyDramaHistory'));
 
 
 const removeDrama = (dramaTitle) => {
-
     Modal.confirm({
         title: `確定是否要刪除該影集 - 【${dramaTitle}】？`,
         //icon: createVNode(ExclamationCircleOutlined),
@@ -68,26 +69,60 @@ const removeDrama = (dramaTitle) => {
 //     showEpisodesText.value = (showEpisodes.value) ? ("收合") : ("展開");
 // }
 const activeKey = ref(['']);
+const activeKeySource = ref(['']);
+// const customStyle =
+//   'background: #f7f7f7;border-radius: 4px;margin-bottom: 24px;border: 0;overflow: hidden';
 
 </script>
 
 <template>
-    <a-flex vertical gap="large" style="width: 100%; margin: 0px; padding: 0;">
-        <!-- <a-flex gap="middle">
+    <a-flex vertical gap="small" style="width: 100%; margin: 0px; padding: 0;">
+        <a-flex gap="small" align="start" style="width: 100%; margin: 0px; padding: 0;">
             <a-flex>
-                <a-image class="imgCover" :src="dramaObj.dramaCoverUrl" :width="150" />
+                <a-image class="imgCover" :src="dramaObj.dramaCoverUrl" :width="120" />
             </a-flex>
-            <a-flex vertical gap="small">
-                <a-flex>
-                    <h1>{{dramaObj.dramaTitle}}</h1>
+            <a-flex vertical style="width: 100%; margin: 0px; padding: 0;">
+                <a-flex align="start" style="width: 100%; margin: 0px; padding: 0;">
+                    <a-flex justify="start" style="width: 100%; margin: 0px; padding: 0;">
+                        <h1 class="colorPrimary">{{dramaObj.dramaTitle}}</h1>
+                    </a-flex>
+                    <a-flex justify="end">
+                        <CloseSquareTwoTone @click="removeDrama(dramaObj.dramaTitle)" two-tone-color="#E64833" style="font-size: xx-large" />
+                    </a-flex>
                 </a-flex>
-                <a-flex gap="small">
-                    <a-button class="buttonPrimary" type="primary" size="large" @click="toggleEpisodesList">{{ showEpisodesText }}</a-button>
-                    <a-button class="buttonAlert" type="primary" size="large" danger @click="removeDrama(dramaObj.dramaTitle)"><DeleteOutlined />移除</a-button>
+                <a-flex gap="small" justify="start">
+                        <a-button class="buttonPrimary" type="primary" size="large"  @click="removeDrama(dramaObj.dramaTitle)"><h3><FastBackwardFilled  style="font-size:larger;" /></h3></a-button>
+                        <a-button class="buttonPrimary" type="primary" size="large"  @click="removeDrama(dramaObj.dramaTitle)"><h3>播放 <PlayCircleFilled /></h3></a-button>
+                        <a-button class="buttonPrimary" type="primary" size="large"  @click="removeDrama(dramaObj.dramaTitle)"><h3><FastForwardFilled style="font-size:larger;" /></h3></a-button>
                 </a-flex>
             </a-flex>
-        </a-flex> -->
-        <a-flex style="width: 100%; margin: 0px; padding: 0;">
+        </a-flex>
+        <a-flex vertical style="width: 100%; margin: 0px; padding: 0;">
+            <a-collapse v-model:activeKey="activeKey" accordion  expand-icon-position="end" style="width: 100%; margin: 0px; padding: 0;">
+                <a-collapse-panel key="title" >
+                    <template #header>
+                        <h3 class="colorPrimary">影集來源</h3>
+                    </template>
+                    <a-collapse v-model:activeKey="activeKeySource" accordion style="width: 100%; margin: 0px; padding: 0;">
+                        <template #expandIcon="{ isActive }">
+                            <CaretRightOutlined :rotate="isActive ? 90 : 0" />
+                        </template>
+                        <a-collapse-panel v-for="filmSource in dramaObj.filmSources" :key="filmSource.filmSourceId" style="width: 100%; margin: 0px; padding: 0;">
+                            <template #header>
+                                <h3>{{ filmSource.filmSourceName }}</h3>
+                            </template>
+                            <a-flex wrap="wrap" gap="small">
+                                <!-- <a-button :type="episodeButtonType(episode.episodeId)" size="large" @click="playVideo(jsonObj.dramaTitle, filmSource.filmSourceName, episode.episodeName, episode.episodeUrl)">{{ episode.episodeName }}</a-button> -->
+                                <a-button v-for="episode in filmSource.episodes" class="buttonPrimaryGhost" type="default" size="large" style="width: 90px"><h3>{{ episode.episodeName }}</h3></a-button>
+                            </a-flex>
+                        </a-collapse-panel>
+                    </a-collapse>
+                </a-collapse-panel>
+            </a-collapse>
+        </a-flex>
+    </a-flex>
+        
+        <!-- <a-flex style="width: 100%; margin: 0px; padding: 0;">
             <a-collapse v-model:activeKey="activeKey" accordion  expand-icon-position="end" style="width: 100%; margin: 0px; padding: 0;">
                 <a-collapse-panel key="title" :show-arrow="false">
                     <template #header>
@@ -100,28 +135,19 @@ const activeKey = ref(['']);
                                     <h1>{{dramaObj.dramaTitle}}</h1>
                                 </a-flex>
                                 <a-flex>
-                                    <!-- <CloseSquareTwoTone @click="removeDrama(dramaObj.dramaTitle)" two-tone-color="#E64833" style="font-size: xx-large" /> -->
                                     <a-button class="buttonAlert" type="primary" size="large" danger @click="removeDrama(dramaObj.dramaTitle)"><CloseOutlined />移除</a-button>
-
                                 </a-flex>
                             </a-flex>
                         </a-flex>
                     </template>
+                    <template #extra>
+                        <CloseSquareTwoTone @click="removeDrama(dramaObj.dramaTitle)" two-tone-color="#E64833" style="font-size: xx-large" />
+
+                    </template>
                     <p>HELLO HELLOHELLOHELLOHELLO HELLO HELLO HELLO HELLO HELLO HELLO HELLOHELLO</p>
-                    <p v-for="filmSource in dramaObj.filmSources">
-                        {{ filmSource.filmSourceName }}
-                        <a-space v-for="episode in filmSource.episodes" size="large" wrap>
-                            <!-- <a-button :type="episodeButtonType(episode.episodeId)" size="large" @click="playVideo(jsonObj.dramaTitle, filmSource.filmSourceName, episode.episodeName, episode.episodeUrl)">{{ episode.episodeName }}</a-button> -->
-                            <a-button class="buttonPrimary" type="primary" size="large">{{ episode.episodeName }}</a-button>
-                        </a-space>
-                    </p>
 
                 </a-collapse-panel>
             </a-collapse>
-        </a-flex>
-    </a-flex>
+        </a-flex> -->
 </template>
 
-<style scoped>
-
-</style>

@@ -105,7 +105,14 @@ const userChangedHandler = (newUser) => {
 .buttonPrimary {
     background-color: var(--howztw-dw-c-primary);
     color:var(--howztw-dw-c-primary-on);
+    font-weight: bolder;
 }
+
+.buttonPrimaryGhost {
+    color: var(--howztw-dw-c-primary);
+    font-weight: bolder;
+}
+
 
 .buttonAlert {
     background-color: var(--howztw-dw-c-alert);
@@ -113,6 +120,14 @@ const userChangedHandler = (newUser) => {
     font-weight: bolder;
 }
 
+.buttonAlertGhost {
+    color: var(--howztw-dw-c-alert);
+    font-weight: bolder;
+}
+
+.colorPrimary {
+    color: var(--howztw-dw-c-primary);
+}
 
 .a {
     color: brown;
