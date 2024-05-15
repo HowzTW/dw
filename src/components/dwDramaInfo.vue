@@ -97,7 +97,7 @@ const playVideo = (title, filmsource, episodename, episodeurl) =>
     playFilmSource.value = filmsource;
     playEpisodeName.value = episodename;
     playEpisodeUrl.value = episodeurl;
-    open.value = true;
+    showDrawer();
 }
 
 const placement = ref('bottom');
@@ -196,7 +196,9 @@ const onClose = () => {
         >
             <h4>{{ playTitle }}</h4>
             <p>{{ playFilmSource }} - {{ playEpisodeName }}</p>
-            <video class="dwVideo" :src="playEpisodeUrl" controls autoplay style="width: 300px;"/>
+            <video class="dwVideo"  controls autoplay style="width: 300px;">
+                <source :src="playEpisodeUrl" type="application/x-mpegURL">
+            </video>
             <input type="text" :value="playEpisodeUrl"/>
         </a-drawer>
 
