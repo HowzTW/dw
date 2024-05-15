@@ -11,9 +11,6 @@ import { dwDramaFilename } from '/src/assets/dwServices.js'
 import { ref } from "vue"
 import { Modal } from 'ant-design-vue';
 import { watch, defineEmits } from 'vue';
-//import { ExclamationCircleOutlined } from '@ant-design/icons-vue';
-//import { DeleteOutlined } from "@ant-design/icons-vue"
-//import { CloseOutlined } from "@ant-design/icons-vue"
 import { CaretRightOutlined } from "@ant-design/icons-vue"
 import { CloseSquareTwoTone } from "@ant-design/icons-vue"
 import { FastBackwardFilled, PlayCircleFilled, FastForwardFilled } from "@ant-design/icons-vue"
@@ -62,16 +59,57 @@ const removeDrama = (dramaTitle) => {
     });
 }
 
-// const showEpisodes = ref(false);
-// const showEpisodesText = ref("展開");
-// const toggleEpisodesList = () => {
-//     showEpisodes.value = !(showEpisodes.value);
-//     showEpisodesText.value = (showEpisodes.value) ? ("收合") : ("展開");
-// }
 const activeKey = ref(['']);
 const activeKeySource = ref(['']);
 // const customStyle =
 //   'background: #f7f7f7;border-radius: 4px;margin-bottom: 24px;border: 0;overflow: hidden';
+
+
+
+
+const episodeButtonType = (episodeId) => {
+    return 'default';
+}
+
+const playEpisodeUrl = ref('https://m3u.haiwaikan.com/xm3u8/137bef9978fd7b0642e71a49d9e2b64be23e0969fe0a59107756273398814aed9921f11e97d0da21.m3u8')
+// const setClipurl = (value) => {
+//     clipurl.value = value;
+// }
+
+const playTitle = ref("繁花")
+// const setPlayTitle = (value) => {
+//     playTitle.value = value;
+// }
+
+const playFilmSource = ref("海外雲")
+// const setPlayFilmSource = (value) => {
+//     playFilmSource.value = value;
+// }
+
+const playEpisodeName = ref("第1集")
+// const setPlayEpisodeName = (value) => {
+//     playEpisodeName.value = value;
+// }
+
+const playVideo = (title, filmsource, episodename, episodeurl) =>
+{
+    playTitle.value = title;
+    playFilmSource.value = filmsource;
+    playEpisodeName.value = episodename;
+    playEpisodeUrl.value = episodeurl;
+    open.value = true;
+}
+
+const placement = ref('bottom');
+const open = ref(false);
+const showDrawer = () => {
+  open.value = true;
+};
+const onClose = () => {
+  open.value = false;
+};
+
+
 
 </script>
 
@@ -113,7 +151,7 @@ const activeKeySource = ref(['']);
                             </template>
                             <a-flex wrap="wrap" gap="small">
                                 <!-- <a-button :type="episodeButtonType(episode.episodeId)" size="large" @click="playVideo(jsonObj.dramaTitle, filmSource.filmSourceName, episode.episodeName, episode.episodeUrl)">{{ episode.episodeName }}</a-button> -->
-                                <a-button v-for="episode in filmSource.episodes" class="buttonPrimaryGhost" type="default" size="large" style="width: 90px"><h3>{{ episode.episodeName }}</h3></a-button>
+                                <a-button v-for="episode in filmSource.episodes" class="buttonPrimaryGhost" :type="episodeButtonType(episode.episodeId)" size="large" style="width: 120px" @click="playVideo(dramaObj.dramaTitle, filmSource.filmSourceName, episode.episodeName, episode.episodeUrl)"><h3>{{ episode.episodeName }}</h3></a-button>
                             </a-flex>
                         </a-collapse-panel>
                     </a-collapse>
@@ -149,5 +187,18 @@ const activeKeySource = ref(['']);
                 </a-collapse-panel>
             </a-collapse>
         </a-flex> -->
+        <a-drawer
+            :title="playTitle"
+            :placement="placement"
+            :closable="false"
+            :open="open"
+            @close="onClose"
+        >
+            <h4>{{ playTitle }}</h4>
+            <p>{{ playFilmSource }} - {{ playEpisodeName }}</p>
+            <video class="dwVideo" :src="playEpisodeUrl" controls autoplay style="width: 300px;"/>
+            <input type="text" :value="playEpisodeUrl"/>
+        </a-drawer>
+
 </template>
 
